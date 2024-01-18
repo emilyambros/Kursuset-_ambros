@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Home</title>
+</head>
+
+  <header>
+    <h1>Orbit Culture</h1>
+    <nav class="navigation">
+          <a href="/">Home</a>
+          <a href="/about">About</a>
+          <a href="/contact">Contact</a>
+          <a href="/profile">Profile</a>   
+          <button class="btnLogin-popup">Login</button>
+    </nav>
+ 
+</header>
+
+<body>
+
+<h3>Welcome to the fan page of Orbit Culture!!</h3>
+
+<div class="wrapper">
+    <span class="icon-close">X</span>
+  <div class="form-box login">
+    <h2>Login</h2>
+    <form action="#">
+      <div class="input-box">
+        <span class="icon"></span>
+        <input type="text" id="userName"required>
+        <label>Username</label>
+      </div>
+      <div class="input-box">
+        <span class="icon"></span>
+        <input type="password" id="password"required>
+        <label>Password</label>
+      </div>
+      <div class="remember-forgot">
+          <label><input type="checkbox">
+          Remember me</label>
+      </div>
+      <button type="submit" class="btn" onclick="saveData()">Login</button>
+      <div class="login-register">
+        <p>Don't have an account? <a href="#" class="register-link">Register</a></p>
+      </div>
+    </form>
+  </div>
+
+  <div class="form-box register">
+
+    <h2>Registration</h2>
+    <form action="#">
+      <div class="input-box">
+        <span class="icon"></span>
+        <input type="text" id="firstName" required>
+        <label>First Name</label>
+      </div>
+      <div class="input-box">
+        <span class="icon"></span>
+        <input type="text" id="lastName" required>
+        <label>Last Name</label>
+      </div>
+      <div class="input-box">
+        <span class="icon"></span>
+        <input type="text" id="username" required>
+        <label>Username</label>
+      </div>
+      <div class="input-box">
+        <span class="icon"></span>
+        <input type="password" id="password" required>
+        <label>Password</label>
+      </div>
+      <div class="input-box">
+        <span class="icon"></span>
+        <input type="number" id="age" required>
+        <label>Age</label>
+      </div>
+      <select id="gender" name="gender">
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+        <option value="other">Other/Prefer not to say</option>
+      </select>
+      <button type="submit" class="btn" onclick="saveData()">Register</button>
+      <div class="login-register">
+        <p>Already have an account? <a href="#" class="login-link">Login</a></p>
+      </div>
+    </form>
+  </div>
+</div>
+
+
+    <script>
+
+      const wrapper = document.querySelector('.wrapper');
+      const loginLink = document.querySelector('.login-link');
+      const registerLink = document.querySelector('.register-link');
+      const btnPopup = document.querySelector('.btnLogin-popup');
+      const iconClose = document.querySelector('.icon-close');
+
+      registerLink.addEventListener('click', ()=> {
+        wrapper.classList.add('active');
+      });
+
+      loginLink.addEventListener('click', ()=> {
+        wrapper.classList.remove('active');
+      });
+
+      btnPopup.addEventListener('click', ()=> {
+        wrapper.classList.add('active-popup');
+      })
+
+      iconClose.addEventListener('click', ()=> {
+        wrapper.classList.remove('active-popup');
+      })
+
+      document.addEventListener('DOMContentLoaded', () => {
+        fetch
+      })
+
+      function saveData() {
+        var userName = document.getElementById("userName").value;
+        var username = document.getElementById("username").value;
+        var firstName = document.getElementById("firstName").value;
+        var lastName = document.getElementById("lastName").value;
+        var age = document.getElementById("age").value;
+        var gender = document.getElementById("gender").value;
+      
+        localStorage.setItem("userName", userName);
+        localStorage.setItem("username", username);
+        localStorage.setItem("firstName", firstName);
+        localStorage.setItem("lastName", lastName);
+        localStorage.setItem("age", age);
+        localStorage.setItem("gender", gender);
+
+        window.location.href = "profile.html";
+      }
+    </script>
+
+
+</body>
+</html>
